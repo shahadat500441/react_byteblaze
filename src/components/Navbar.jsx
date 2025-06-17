@@ -21,7 +21,7 @@ const Navbar = () => {
   return (
     <div className="navbar bg-base-100  shadow-lg px-4 z-10 fixed">
       <div className="flex-1">
-        <Link to="/" className="btn btn-ghost text-xl gap-0 text-primary font-bold">
+        <Link to="/" className="btn btn-ghost text-2xl gap-0 text-primary font-bold">
           Byte<span className="text-secondary">Blaze</span>
         </Link>
       </div>
@@ -38,12 +38,14 @@ const Navbar = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink to="/blogs" className>
+            <NavLink to="/blogs" className={({isActive})=> isActive ? "font-bold text-primary": "font-bold"}>
               Blogs
             </NavLink>
           </li>
           <li>
-            <a>Bookmarks</a>
+              <NavLink to="/bookmarks" className={({isActive})=> isActive ? "font-bold text-primary": "font-bold"}>
+             Bookmarks
+            </NavLink>
           </li>
         </ul>
         <label className="toggle text-base-content">
