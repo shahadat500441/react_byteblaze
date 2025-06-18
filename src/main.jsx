@@ -8,34 +8,17 @@ import MainLayouts from './assets/layouts/MainLayouts';
 
 
 import {
-  createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
+
 import Blogs from './pages/Blogs';
 import Bookmarks from './pages/Bookmarks';
+import Blog from './pages/Blog';
+
+import { router } from './routes/Routes';
 
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <MainLayouts></MainLayouts>,
-     children:[
-     {
-      path:"/",
-      element:<Home></Home>
-     },
-     {
-      path:"/blogs",
-      element:<Blogs></Blogs>,
-      loader:()=> fetch('https://dev.to/api/articles?per_page=20&top=7')
-     },
-     {
-      path:"/bookmarks",
-      element:<Bookmarks></Bookmarks>
-     }
-    ]
-  },
-]);
+
 
 createRoot(document.getElementById('root')).render(
   <>
